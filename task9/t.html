@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>
+            Dynamic Input 
+        </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrap">
+                <h2>Add </h2>
+                <a href="#" class="add">&plus;</a>
+            </div>
+            <div class="inp-group">
+                <input name="firstName" placeholder="Enter FirstName" value="" onchange=""/>
+                <input name="lastName" placeholder="Enter LastName" value="" onchange=""/>
+            </div>
+            <button id="submitButton">Submit</button>
+        </div>
+
+        <script>
+            const customerDetail = {
+                firstName: "",
+                lastName: ""
+            };
+
+            console.log(customerDetail);
+
+            const handleSubmit = () => {
+            const firstNameInput = document.querySelector('input[name="firstName"]');
+            const lastNameInput = document.querySelector('input[name="lastName"]');
+
+            customerDetail.firstName = firstNameInput.value;
+            customerDetail.lastName = lastNameInput.value;
+
+            console.log(customerDetail);
+
+            // Add your code to handle the form submission or perform other actions here.
+            // For example, you can send the data to the server, save it in local storage, etc.
+            };
+
+            const submitButton = document.getElementById('submitButton');
+            submitButton.addEventListener('click', handleSubmit);
+        </script>
+    </body>
+</html>
